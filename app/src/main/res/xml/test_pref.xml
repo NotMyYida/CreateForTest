@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory
+        android:title="Simple Preferences"
+        >
+
+    <CheckBoxPreference
+        android:key="checkbox"
+        android:title="CheckBox Preference"
+        android:summary="Check here"
+        />
+    <RingtonePreference
+        android:key="ringtone"
+        android:title="Ringtone title"
+        android:showDefault="true"
+        android:showSilent="true"
+        android:summary="Pick a tone,any tone"
+        />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <CheckBoxPreference
+        android:key="key_checkbox_preference"
+        android:summary="Some summary for it"
+        android:title="Title of CheckBoxPreference"
+        android:icon="@mipmap/ic_launcher"
+        android:checked="true"
+        />
+    <Preference
+        android:key="key_preference"
+        android:title="Preference"
+        android:summary="Preference Demo"
+        />
+
+    <PreferenceScreen
+        android:key="second_preference"
+        android:title="Wifi setting"
+        >
+        <CheckBoxPreference
+            android:key="@string/app_name"
+            android:title="prefer wifi"
+            />
+        <CheckBoxPreference
+            android:key="prefer_wifi2"
+            android:title="prefer wifi"
+            />
+    </PreferenceScreen>
+
+</PreferenceScreen>

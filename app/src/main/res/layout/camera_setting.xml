@@ -1,0 +1,596 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="设置"
+        android:gravity="center"
+        />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        >
+
+        <ImageView
+            android:id="@+id/iv_location"
+            android:layout_width="@dimen/icon_width"
+            android:layout_height="@dimen/icon_width"
+            android:src="@mipmap/ic_launcher"
+            android:layout_centerVertical="true"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="GPS location"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/iv_location"
+            />
+
+        <CheckBox
+            android:id="@+id/cb_gps_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/activity_vertical_margin"
+            android:layout_alignParentEnd="true"
+            />
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        >
+
+        <ImageView
+            android:id="@+id/iv_continuous_shot"
+            android:layout_width="@dimen/icon_width"
+            android:layout_height="@dimen/icon_width"
+            android:src="@mipmap/ic_launcher"
+            android:layout_centerVertical="true"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="GPS location"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/iv_continuous_shot"
+            />
+
+        <CheckBox
+            android:id="@+id/cb_continuous_shot"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/activity_vertical_margin"
+            android:layout_alignParentEnd="true"
+            />
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        >
+
+        <ImageView
+            android:id="@+id/iv_shutter_sound"
+            android:layout_width="@dimen/icon_width"
+            android:layout_height="@dimen/icon_width"
+            android:src="@mipmap/ic_launcher"
+            android:layout_centerVertical="true"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="GPS location"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/iv_shutter_sound"
+            />
+
+        <CheckBox
+            android:id="@+id/cb_shutter_sound"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/activity_vertical_margin"
+            android:layout_alignParentEnd="true"
+            />
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        >
+
+        <ImageView
+            android:id="@+id/iv_watermark"
+            android:layout_width="@dimen/icon_width"
+            android:layout_height="@dimen/icon_width"
+            android:src="@mipmap/ic_launcher"
+            android:layout_centerVertical="true"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="GPS location"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/iv_watermark"
+            />
+
+        <CheckBox
+            android:id="@+id/cb_watermark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/activity_vertical_margin"
+            android:layout_alignParentEnd="true"
+            />
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        >
+
+        <ImageView
+            android:id="@+id/iv_storage"
+            android:layout_width="@dimen/icon_width"
+            android:layout_height="@dimen/icon_width"
+            android:src="@mipmap/ic_launcher"
+            android:layout_centerVertical="true"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="GPS location"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/iv_storage"
+            />
+
+        <CheckBox
+            android:id="@+id/cb_storage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/activity_vertical_margin"
+            android:layout_alignParentEnd="true"
+            />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/ll_storage"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_centerVertical="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="phone"
+                />
+            <ImageView
+                android:layout_centerVertical="true"
+                android:id="@+id/iv_storage_phone"
+                android:layout_width="@dimen/rg_icon"
+                android:layout_height="@dimen/rg_icon"
+                android:layout_alignParentEnd="true"
+                android:src="@mipmap/ic_launcher"
+                android:layout_marginRight="@dimen/activity_vertical_margin"
+                />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorTextAssistant"
+            />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_centerVertical="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SD card"
+                />
+            <ImageView
+                android:layout_centerVertical="true"
+                android:id="@+id/iv_storage_SD"
+                android:layout_width="@dimen/rg_icon"
+                android:layout_height="@dimen/rg_icon"
+                android:layout_alignParentEnd="true"
+                android:src="@mipmap/ic_launcher"
+                android:layout_marginRight="@dimen/activity_vertical_margin"
+                />
+        </RelativeLayout>
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        >
+
+        <ImageView
+            android:id="@+id/iv_iso"
+            android:layout_width="@dimen/icon_width"
+            android:layout_height="@dimen/icon_width"
+            android:src="@mipmap/ic_launcher"
+            android:layout_centerVertical="true"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="GPS location"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/iv_iso"
+            />
+
+        <CheckBox
+            android:id="@+id/cb_iso"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/activity_vertical_margin"
+            android:layout_alignParentEnd="true"
+            />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/ll_iso"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_centerVertical="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Auto"
+                />
+            <ImageView
+                android:layout_centerVertical="true"
+                android:id="@+id/iv_iso_auto"
+                android:layout_width="@dimen/rg_icon"
+                android:layout_height="@dimen/rg_icon"
+                android:layout_alignParentEnd="true"
+                android:src="@mipmap/ic_launcher"
+                android:layout_marginRight="@dimen/activity_vertical_margin"
+                />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorTextAssistant"
+            />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_centerVertical="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ISO100"
+                />
+            <ImageView
+                android:layout_centerVertical="true"
+                android:id="@+id/iv_iso100"
+                android:layout_width="@dimen/rg_icon"
+                android:layout_height="@dimen/rg_icon"
+                android:layout_alignParentEnd="true"
+                android:src="@mipmap/ic_launcher"
+                android:layout_marginRight="@dimen/activity_vertical_margin"
+                />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorTextAssistant"
+            />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_centerVertical="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ISO200"
+                />
+            <ImageView
+                android:layout_centerVertical="true"
+                android:id="@+id/iv_iso200"
+                android:layout_width="@dimen/rg_icon"
+                android:layout_height="@dimen/rg_icon"
+                android:layout_alignParentEnd="true"
+                android:src="@mipmap/ic_launcher"
+                android:layout_marginRight="@dimen/activity_vertical_margin"
+                />
+        </RelativeLayout>
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorTextAssistant"
+            />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_centerVertical="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ISO400"
+                />
+            <ImageView
+                android:layout_centerVertical="true"
+                android:id="@+id/iv_iso400"
+                android:layout_width="@dimen/rg_icon"
+                android:layout_height="@dimen/rg_icon"
+                android:layout_alignParentEnd="true"
+                android:src="@mipmap/ic_launcher"
+                android:layout_marginRight="@dimen/activity_vertical_margin"
+                />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorTextAssistant"
+            />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_centerVertical="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ISO800"
+                />
+            <ImageView
+                android:layout_centerVertical="true"
+                android:id="@+id/iv_iso800"
+                android:layout_width="@dimen/rg_icon"
+                android:layout_height="@dimen/rg_icon"
+                android:layout_alignParentEnd="true"
+                android:src="@mipmap/ic_launcher"
+                android:layout_marginRight="@dimen/activity_vertical_margin"
+                />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorTextAssistant"
+            />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_centerVertical="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ISO1600"
+                />
+            <ImageView
+                android:layout_centerVertical="true"
+                android:id="@+id/iv_iso1600"
+                android:layout_width="@dimen/rg_icon"
+                android:layout_height="@dimen/rg_icon"
+                android:layout_alignParentEnd="true"
+                android:src="@mipmap/ic_launcher"
+                android:layout_marginRight="@dimen/activity_vertical_margin"
+                />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        >
+
+        <ImageView
+            android:id="@+id/iv_white_balance"
+            android:layout_width="@dimen/icon_width"
+            android:layout_height="@dimen/icon_width"
+            android:src="@mipmap/ic_launcher"
+            android:layout_centerVertical="true"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="White balance"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/iv_iso"
+            />
+
+        <CheckBox
+            android:id="@+id/cb_wb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/activity_vertical_margin"
+            android:layout_alignParentEnd="true"
+            />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/ll_wb"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_centerVertical="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Incandescent"
+                />
+            <ImageView
+                android:layout_centerVertical="true"
+                android:id="@+id/iv_wb_incandescent"
+                android:layout_width="@dimen/rg_icon"
+                android:layout_height="@dimen/rg_icon"
+                android:layout_alignParentEnd="true"
+                android:src="@mipmap/ic_launcher"
+                android:layout_marginRight="@dimen/activity_vertical_margin"
+                />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorTextAssistant"
+            />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_centerVertical="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Fluorescent"
+                />
+            <ImageView
+                android:layout_centerVertical="true"
+                android:id="@+id/iv_wb_fluorescent"
+                android:layout_width="@dimen/rg_icon"
+                android:layout_height="@dimen/rg_icon"
+                android:layout_alignParentEnd="true"
+                android:src="@mipmap/ic_launcher"
+                android:layout_marginRight="@dimen/activity_vertical_margin"
+                />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorTextAssistant"
+            />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_centerVertical="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Auto"
+                />
+            <ImageView
+                android:layout_centerVertical="true"
+                android:id="@+id/iv_wb_auto"
+                android:layout_width="@dimen/rg_icon"
+                android:layout_height="@dimen/rg_icon"
+                android:layout_alignParentEnd="true"
+                android:src="@mipmap/ic_launcher"
+                android:layout_marginRight="@dimen/activity_vertical_margin"
+                />
+        </RelativeLayout>
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorTextAssistant"
+            />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_centerVertical="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Daylight"
+                />
+            <ImageView
+                android:layout_centerVertical="true"
+                android:id="@+id/iv_wb_daylight"
+                android:layout_width="@dimen/rg_icon"
+                android:layout_height="@dimen/rg_icon"
+                android:layout_alignParentEnd="true"
+                android:src="@mipmap/ic_launcher"
+                android:layout_marginRight="@dimen/activity_vertical_margin"
+                />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorTextAssistant"
+            />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_centerVertical="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cloudy"
+                />
+            <ImageView
+                android:layout_centerVertical="true"
+                android:id="@+id/iv_wb_cloudy"
+                android:layout_width="@dimen/rg_icon"
+                android:layout_height="@dimen/rg_icon"
+                android:layout_alignParentEnd="true"
+                android:src="@mipmap/ic_launcher"
+                android:layout_marginRight="@dimen/activity_vertical_margin"
+                />
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+</LinearLayout>

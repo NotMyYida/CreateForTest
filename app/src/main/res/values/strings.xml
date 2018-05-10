@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">VerifyImagination</string>
+    <string name="test_type_layout">验证 Layout 文件</string>
+    <string name="test_matrix">验证 Matrix</string>
+    <string name="test_ndk">验证　ＮＤＫ</string>
+    <string name="test_texture">验证 TextureView</string>
+    <string name="test_tab_layout">验证TabLayout</string>
+    <string name="test_opengl">验证OpenGL</string>
+    <string name="test_preference">验证Preference</string>
+    <string name="get_battery">获取电量</string>
+    <string name="test_pop">弹出ｐｏｐ</string>
+    <string name="test_rotation">测试Ｒｏｔａｔｉｏｎ</string>
+
+</resources>

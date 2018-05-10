@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.hp.verifyimagination">
+
+    <uses-permission android:name="android.permission.CAMERA"/>
+
+    <application
+        android:name=".base.VerifyImaginationApp"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".verify.layout.VerifyLayoutActivity"/>
+        <activity android:name=".verify.layout.funtion.MatrixVerifyActivity"/>
+        <activity android:name=".verify.layout.funtion.NDKTestActivity"/>
+        <activity android:name=".verify.layout.VerifyTextureViewActivity"/>
+        <activity android:name=".verify.layout.VerifyTabLayoutActivity"/>
+        <activity android:name=".verify.layout.funtion.VerifyOpenGLActivity">
+            <intent-filter>
+                <category android:name="intent.category.opengl.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".verify.layout.funtion.PreferenceActivity"/>
+        <activity android:name=".verify.layout.funtion.GetBatteryActivity"/>
+        <activity android:name=".verify.layout.PopMenuActivity" />
+        <activity android:name=".verify.layout.funtion.ImageRotationActivity"
+            android:configChanges="orientation"
+            />
+
+    </application>
+
+</manifest>

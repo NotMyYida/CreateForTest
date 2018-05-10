@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:lsp="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/toolbar_include"/>
+
+    <android.support.design.widget.TabLayout
+        android:id="@+id/tabLayout"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        >
+        <android.support.design.widget.TabItem
+            android:text="慢动作"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <android.support.design.widget.TabItem
+            android:text="全景"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <android.support.design.widget.TabItem
+            android:text="照相"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <android.support.design.widget.TabItem
+            android:text="视频"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <android.support.design.widget.TabItem
+            android:text="人像"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </android.support.design.widget.TabLayout>
+
+    <com.example.hp.verifyimagination.view.VerticalSeekBar
+        android:id="@+id/vertical_seekBar"
+        android:layout_width="60dp"
+        android:layout_height="150dp"
+        android:layout_gravity="center_horizontal"
+        />
+
+    <com.example.hp.verifyimagination.view.HorizontalSelectedView
+        android:id="@+id/horizontalSelectedView"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        app:HorizontalselectedViewSeesize="7"
+        app:HorizontalselectedViewSelectedTextColor="#000000"
+        app:HorizontalselectedViewSelectedTextSize="30"
+        app:HorizontalselectedViewTextColor="#666666"
+        app:HorizontalselectedViewTextSize="30"
+        />
+
+    <com.example.hp.verifyimagination.view.RulerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        lsp:bgColor="#fcfffc"
+        lsp:firstScale="172"
+        lsp:isBgRoundRect="true"
+        lsp:largeScaleColor="#50b586"
+        lsp:largeScaleStroke="5dp"
+        lsp:maxScale="230"
+        lsp:midScaleColor="#999999"
+        lsp:midScaleStroke="3dp"
+        lsp:minScale="150"
+        lsp:resultNumColor="#50b586"
+        lsp:resultNumTextSize="20sp"
+        lsp:rulerHeight="50dp"
+        lsp:rulerToResultgap="30dp"
+        lsp:scaleCount="5"
+        lsp:scaleGap="10dp"
+        lsp:scaleNumColor="#666666"
+        lsp:scaleNumTextSize="16sp"
+        lsp:showScaleResult="false"
+        lsp:smallScaleColor="#aaaaaa"
+        lsp:smallScaleStroke="2dp"
+        lsp:unit="cm"
+        lsp:unitColor="#50b586"
+        lsp:unitTextSize="10sp"/>
+
+
+    <com.example.hp.verifyimagination.view.PureVerticalSeekBar
+        android:id="@+id/pure_vertical_seekbar"
+        android:layout_width="14dp"
+        android:layout_height="200dp"
+        android:layout_marginLeft="100dp"
+        app:dragable="true" />
+
+</LinearLayout>

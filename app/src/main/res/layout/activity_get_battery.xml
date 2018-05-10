@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <include layout="@layout/toolbar_include"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="densityDpi:"
+        android:id="@+id/tv_densityDpi"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="density : "
+        android:id="@+id/tv_density"
+        />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:layout_gravity="center_horizontal|bottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="电池电量 : 0"
+            android:id="@+id/tv_battery"
+            android:layout_marginBottom="16dp"
+
+            />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="获取电量"
+            android:id="@+id/btn_get_battery"
+            android:layout_gravity="bottom"
+            />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="无电量对话框"
+            android:id="@+id/btn_show_low_battery"
+            android:layout_gravity="bottom|end"
+            />
+        <com.example.hp.verifyimagination.view.GestureViewGroup
+            android:layout_width="match_parent"
+            android:layout_height="300dp">
+
+            <com.example.hp.verifyimagination.view.JustTouchScroll
+                android:layout_width="match_parent"
+                android:layout_height="300dp" />
+
+        </com.example.hp.verifyimagination.view.GestureViewGroup>
+
+    </FrameLayout>
+
+    
+</LinearLayout>
