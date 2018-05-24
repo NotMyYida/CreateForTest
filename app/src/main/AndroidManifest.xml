@@ -3,6 +3,8 @@
     package="com.example.hp.verifyimagination">
 
     <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
 
     <application
         android:name=".base.VerifyImaginationApp"
@@ -36,6 +38,7 @@
         <activity android:name=".verify.layout.funtion.ImageRotationActivity"
             android:configChanges="orientation"
             />
+        <activity android:name=".verify.layout.funtion.ScrollerActivity"/>
 
     </application>
 

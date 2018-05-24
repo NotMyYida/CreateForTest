@@ -1,9 +1,17 @@
 package com.example.hp.verifyimagination.verify.layout;
 
+import android.Manifest;
+import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.os.Environment;
 import android.support.annotation.Nullable;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -12,6 +20,10 @@ import com.example.hp.verifyimagination.base.BaseActivity;
 import com.example.hp.verifyimagination.popmenu.PopMenuMore;
 import com.example.hp.verifyimagination.popmenu.PopMenuMoreItem;
 
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.util.ArrayList;
 
 /**
@@ -21,6 +33,7 @@ import java.util.ArrayList;
 public class PopMenuActivity extends BaseActivity implements View.OnClickListener{
 
     private PopMenuMore popMenuMore;
+    private ImageView ivBitmap;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -30,7 +43,36 @@ public class PopMenuActivity extends BaseActivity implements View.OnClickListene
         TextView tvPop = findViewById(R.id.tv_pop);
         initPopMenu();
         tvPop.setOnClickListener(this);
+
+        ivBitmap = findViewById(R.id.iv_bitmap);
+        int permission = ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE);
+        if( permission == PackageManager.PERMISSION_GRANTED ){
+            loadBitmap();
+        }else{
+            ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},0);
+        }
+
     }
+
+    public void loadBitmap(){
+        Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.mipmap.matrix);
+//        ivBitmap.setImageBitmap(bitmap);
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        bitmap.compress(Bitmap.CompressFormat.JPEG,100,baos);
+        byte[] data = baos.toByteArray();
+        String file =Environment.getExternalStorageDirectory().getPath()+"/DCIM/Camera/"+"test.jpeg";
+        try {
+            FileOutputStream fos = new FileOutputStream(new File(file));
+            fos.write(data,0,data.length);
+            fos.flush();
+            fos.close();
+            Toast.makeText(this,"已保存",Toast.LENGTH_SHORT).show();
+        } catch (Exception e) {
+            e.printStackTrace();
+            Toast.makeText(this,"保存失败",Toast.LENGTH_SHORT).show();
+        }
+    }
+
 
     private void initPopMenu() {
         popMenuMore = new PopMenuMore(this);

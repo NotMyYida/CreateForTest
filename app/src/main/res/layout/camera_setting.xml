@@ -1,13 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
-
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="设置"
+        android:padding="8dp"
+        android:text="Settings"
+        android:textColor="@android:color/white"
+        android:background="@android:color/black"
         android:gravity="center"
+        android:textSize="@dimen/camera_setting_item_text_size"
         />
 
     <RelativeLayout
@@ -16,20 +24,13 @@
         android:layout_marginTop="8dp"
         >
 
-        <ImageView
-            android:id="@+id/iv_location"
-            android:layout_width="@dimen/icon_width"
-            android:layout_height="@dimen/icon_width"
-            android:src="@mipmap/ic_launcher"
-            android:layout_centerVertical="true"
-            />
-
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="GPS location"
             android:layout_centerVertical="true"
-            android:layout_toRightOf="@id/iv_location"
+            android:layout_marginLeft="@dimen/camera_setting_words_margin_left"
+            android:textSize="@dimen/camera_setting_item_text_size"
             />
 
         <CheckBox
@@ -39,6 +40,8 @@
             android:layout_centerVertical="true"
             android:layout_marginRight="@dimen/activity_vertical_margin"
             android:layout_alignParentEnd="true"
+            android:background="@drawable/switch_button"
+            android:button="@null"
             />
 
     </RelativeLayout>
@@ -50,20 +53,13 @@
         android:layout_marginTop="8dp"
         >
 
-        <ImageView
-            android:id="@+id/iv_continuous_shot"
-            android:layout_width="@dimen/icon_width"
-            android:layout_height="@dimen/icon_width"
-            android:src="@mipmap/ic_launcher"
-            android:layout_centerVertical="true"
-            />
-
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="GPS location"
+            android:text="Continuous Shot"
             android:layout_centerVertical="true"
-            android:layout_toRightOf="@id/iv_continuous_shot"
+            android:layout_marginLeft="@dimen/camera_setting_words_margin_left"
+            android:textSize="@dimen/camera_setting_item_text_size"
             />
 
         <CheckBox
@@ -73,6 +69,8 @@
             android:layout_centerVertical="true"
             android:layout_marginRight="@dimen/activity_vertical_margin"
             android:layout_alignParentEnd="true"
+            android:background="@drawable/switch_button"
+            android:button="@null"
             />
 
     </RelativeLayout>
@@ -84,20 +82,14 @@
         android:layout_marginTop="8dp"
         >
 
-        <ImageView
-            android:id="@+id/iv_shutter_sound"
-            android:layout_width="@dimen/icon_width"
-            android:layout_height="@dimen/icon_width"
-            android:src="@mipmap/ic_launcher"
-            android:layout_centerVertical="true"
-            />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="GPS location"
+            android:text="Shutter Sound"
             android:layout_centerVertical="true"
-            android:layout_toRightOf="@id/iv_shutter_sound"
+            android:layout_marginLeft="@dimen/camera_setting_words_margin_left"
+            android:textSize="@dimen/camera_setting_item_text_size"
             />
 
         <CheckBox
@@ -107,6 +99,8 @@
             android:layout_centerVertical="true"
             android:layout_marginRight="@dimen/activity_vertical_margin"
             android:layout_alignParentEnd="true"
+            android:background="@drawable/switch_button"
+            android:button="@null"
             />
 
     </RelativeLayout>
@@ -118,20 +112,14 @@
         android:layout_marginTop="8dp"
         >
 
-        <ImageView
-            android:id="@+id/iv_watermark"
-            android:layout_width="@dimen/icon_width"
-            android:layout_height="@dimen/icon_width"
-            android:src="@mipmap/ic_launcher"
-            android:layout_centerVertical="true"
-            />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="GPS location"
+            android:text="Watermark"
             android:layout_centerVertical="true"
-            android:layout_toRightOf="@id/iv_watermark"
+            android:layout_marginLeft="@dimen/camera_setting_words_margin_left"
+            android:textSize="@dimen/camera_setting_item_text_size"
             />
 
         <CheckBox
@@ -141,6 +129,8 @@
             android:layout_centerVertical="true"
             android:layout_marginRight="@dimen/activity_vertical_margin"
             android:layout_alignParentEnd="true"
+            android:background="@drawable/switch_button"
+            android:button="@null"
             />
 
     </RelativeLayout>
@@ -152,29 +142,23 @@
         android:layout_marginTop="8dp"
         >
 
-        <ImageView
-            android:id="@+id/iv_storage"
-            android:layout_width="@dimen/icon_width"
-            android:layout_height="@dimen/icon_width"
-            android:src="@mipmap/ic_launcher"
-            android:layout_centerVertical="true"
-            />
-
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="GPS location"
+            android:text="Storage"
             android:layout_centerVertical="true"
-            android:layout_toRightOf="@id/iv_storage"
+            android:layout_marginLeft="@dimen/camera_setting_words_margin_left"
+            android:textSize="@dimen/camera_setting_item_text_size"
             />
 
-        <CheckBox
+        <ImageView
             android:id="@+id/cb_storage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_marginRight="@dimen/activity_vertical_margin"
             android:layout_alignParentEnd="true"
+            android:src="@mipmap/ic_arrows_list_down"
             />
 
     </RelativeLayout>
@@ -187,12 +171,16 @@
         >
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/camera_setting_sub_item_margin"
+            android:layout_marginTop="@dimen/camera_setting_sub_item_margin"
+            >
             <TextView
                 android:layout_centerVertical="true"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="phone"
+                android:layout_marginLeft="@dimen/camera_setting_second_level_words_margin_left"
                 />
             <ImageView
                 android:layout_centerVertical="true"
@@ -200,7 +188,7 @@
                 android:layout_width="@dimen/rg_icon"
                 android:layout_height="@dimen/rg_icon"
                 android:layout_alignParentEnd="true"
-                android:src="@mipmap/ic_launcher"
+                android:src="@mipmap/bt_green_normal"
                 android:layout_marginRight="@dimen/activity_vertical_margin"
                 />
         </RelativeLayout>
@@ -213,12 +201,15 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/camera_setting_sub_item_margin"
+            android:layout_marginTop="@dimen/camera_setting_sub_item_margin">
             <TextView
                 android:layout_centerVertical="true"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="SD card"
+                android:layout_marginLeft="@dimen/camera_setting_second_level_words_margin_left"
                 />
             <ImageView
                 android:layout_centerVertical="true"
@@ -226,7 +217,7 @@
                 android:layout_width="@dimen/rg_icon"
                 android:layout_height="@dimen/rg_icon"
                 android:layout_alignParentEnd="true"
-                android:src="@mipmap/ic_launcher"
+                android:src="@mipmap/bt_green_down"
                 android:layout_marginRight="@dimen/activity_vertical_margin"
                 />
         </RelativeLayout>
@@ -239,29 +230,24 @@
         android:layout_marginTop="8dp"
         >
 
-        <ImageView
-            android:id="@+id/iv_iso"
-            android:layout_width="@dimen/icon_width"
-            android:layout_height="@dimen/icon_width"
-            android:src="@mipmap/ic_launcher"
-            android:layout_centerVertical="true"
-            />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="GPS location"
+            android:text="ISO"
             android:layout_centerVertical="true"
-            android:layout_toRightOf="@id/iv_iso"
+            android:layout_marginLeft="@dimen/camera_setting_words_margin_left"
+            android:textSize="@dimen/camera_setting_item_text_size"
             />
 
-        <CheckBox
+        <ImageView
             android:id="@+id/cb_iso"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_marginRight="@dimen/activity_vertical_margin"
             android:layout_alignParentEnd="true"
+            android:src="@mipmap/ic_arrows_list_down"
             />
 
     </RelativeLayout>
@@ -274,12 +260,16 @@
         >
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/camera_setting_sub_item_margin"
+            android:layout_marginTop="@dimen/camera_setting_sub_item_margin"
+            >
             <TextView
                 android:layout_centerVertical="true"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Auto"
+                android:layout_marginLeft="@dimen/camera_setting_second_level_words_margin_left"
                 />
             <ImageView
                 android:layout_centerVertical="true"
@@ -287,7 +277,7 @@
                 android:layout_width="@dimen/rg_icon"
                 android:layout_height="@dimen/rg_icon"
                 android:layout_alignParentEnd="true"
-                android:src="@mipmap/ic_launcher"
+                android:src="@mipmap/bt_green_down"
                 android:layout_marginRight="@dimen/activity_vertical_margin"
                 />
         </RelativeLayout>
@@ -300,12 +290,16 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/camera_setting_sub_item_margin"
+            android:layout_marginTop="@dimen/camera_setting_sub_item_margin"
+            >
             <TextView
                 android:layout_centerVertical="true"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="ISO100"
+                android:layout_marginLeft="@dimen/camera_setting_second_level_words_margin_left"
                 />
             <ImageView
                 android:layout_centerVertical="true"
@@ -313,7 +307,7 @@
                 android:layout_width="@dimen/rg_icon"
                 android:layout_height="@dimen/rg_icon"
                 android:layout_alignParentEnd="true"
-                android:src="@mipmap/ic_launcher"
+                android:src="@mipmap/bt_green_normal"
                 android:layout_marginRight="@dimen/activity_vertical_margin"
                 />
         </RelativeLayout>
@@ -326,12 +320,16 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/camera_setting_sub_item_margin"
+            android:layout_marginTop="@dimen/camera_setting_sub_item_margin"
+            >
             <TextView
                 android:layout_centerVertical="true"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="ISO200"
+                android:layout_marginLeft="@dimen/camera_setting_second_level_words_margin_left"
                 />
             <ImageView
                 android:layout_centerVertical="true"
@@ -339,7 +337,7 @@
                 android:layout_width="@dimen/rg_icon"
                 android:layout_height="@dimen/rg_icon"
                 android:layout_alignParentEnd="true"
-                android:src="@mipmap/ic_launcher"
+                android:src="@mipmap/bt_green_normal"
                 android:layout_marginRight="@dimen/activity_vertical_margin"
                 />
         </RelativeLayout>
@@ -353,22 +351,28 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/cb_wb"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/camera_setting_sub_item_margin"
+            android:layout_marginTop="@dimen/camera_setting_sub_item_margin"
+            >
+
             <TextView
-                android:layout_centerVertical="true"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="ISO400"
-                />
-            <ImageView
                 android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/camera_setting_second_level_words_margin_left"
+                android:text="ISO400" />
+
+            <ImageView
                 android:id="@+id/iv_iso400"
                 android:layout_width="@dimen/rg_icon"
                 android:layout_height="@dimen/rg_icon"
                 android:layout_alignParentEnd="true"
-                android:src="@mipmap/ic_launcher"
+                android:layout_centerVertical="true"
                 android:layout_marginRight="@dimen/activity_vertical_margin"
-                />
+                android:src="@mipmap/bt_green_normal" />
         </RelativeLayout>
 
         <View
@@ -379,12 +383,16 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/camera_setting_sub_item_margin"
+            android:layout_marginTop="@dimen/camera_setting_sub_item_margin"
+            >
             <TextView
                 android:layout_centerVertical="true"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="ISO800"
+                android:layout_marginLeft="@dimen/camera_setting_second_level_words_margin_left"
                 />
             <ImageView
                 android:layout_centerVertical="true"
@@ -392,7 +400,7 @@
                 android:layout_width="@dimen/rg_icon"
                 android:layout_height="@dimen/rg_icon"
                 android:layout_alignParentEnd="true"
-                android:src="@mipmap/ic_launcher"
+                android:src="@mipmap/bt_green_normal"
                 android:layout_marginRight="@dimen/activity_vertical_margin"
                 />
         </RelativeLayout>
@@ -405,12 +413,16 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/camera_setting_sub_item_margin"
+            android:layout_marginTop="@dimen/camera_setting_sub_item_margin"
+            >
             <TextView
                 android:layout_centerVertical="true"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="ISO1600"
+                android:layout_marginLeft="@dimen/camera_setting_second_level_words_margin_left"
                 />
             <ImageView
                 android:layout_centerVertical="true"
@@ -418,7 +430,7 @@
                 android:layout_width="@dimen/rg_icon"
                 android:layout_height="@dimen/rg_icon"
                 android:layout_alignParentEnd="true"
-                android:src="@mipmap/ic_launcher"
+                android:src="@mipmap/bt_green_normal"
                 android:layout_marginRight="@dimen/activity_vertical_margin"
                 />
         </RelativeLayout>
@@ -432,29 +444,24 @@
         android:layout_marginTop="8dp"
         >
 
-        <ImageView
-            android:id="@+id/iv_white_balance"
-            android:layout_width="@dimen/icon_width"
-            android:layout_height="@dimen/icon_width"
-            android:src="@mipmap/ic_launcher"
-            android:layout_centerVertical="true"
-            />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="White balance"
             android:layout_centerVertical="true"
-            android:layout_toRightOf="@id/iv_iso"
+            android:layout_marginLeft="@dimen/camera_setting_words_margin_left"
+            android:textSize="@dimen/camera_setting_item_text_size"
             />
 
-        <CheckBox
+        <ImageView
             android:id="@+id/cb_wb"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_marginRight="@dimen/activity_vertical_margin"
             android:layout_alignParentEnd="true"
+            android:src="@mipmap/ic_arrows_list_down"
             />
 
     </RelativeLayout>
@@ -467,12 +474,16 @@
         >
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/camera_setting_sub_item_margin"
+            android:layout_marginTop="@dimen/camera_setting_sub_item_margin"
+            >
             <TextView
                 android:layout_centerVertical="true"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Incandescent"
+                android:layout_marginLeft="@dimen/camera_setting_second_level_words_margin_left"
                 />
             <ImageView
                 android:layout_centerVertical="true"
@@ -480,7 +491,7 @@
                 android:layout_width="@dimen/rg_icon"
                 android:layout_height="@dimen/rg_icon"
                 android:layout_alignParentEnd="true"
-                android:src="@mipmap/ic_launcher"
+                android:src="@mipmap/bt_green_down"
                 android:layout_marginRight="@dimen/activity_vertical_margin"
                 />
         </RelativeLayout>
@@ -493,12 +504,16 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/camera_setting_sub_item_margin"
+            android:layout_marginTop="@dimen/camera_setting_sub_item_margin"
+            >
             <TextView
                 android:layout_centerVertical="true"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Fluorescent"
+                android:layout_marginLeft="@dimen/camera_setting_second_level_words_margin_left"
                 />
             <ImageView
                 android:layout_centerVertical="true"
@@ -506,7 +521,7 @@
                 android:layout_width="@dimen/rg_icon"
                 android:layout_height="@dimen/rg_icon"
                 android:layout_alignParentEnd="true"
-                android:src="@mipmap/ic_launcher"
+                android:src="@mipmap/bt_green_normal"
                 android:layout_marginRight="@dimen/activity_vertical_margin"
                 />
         </RelativeLayout>
@@ -519,12 +534,16 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/camera_setting_sub_item_margin"
+            android:layout_marginTop="@dimen/camera_setting_sub_item_margin"
+            >
             <TextView
                 android:layout_centerVertical="true"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Auto"
+                android:layout_marginLeft="@dimen/camera_setting_second_level_words_margin_left"
                 />
             <ImageView
                 android:layout_centerVertical="true"
@@ -532,7 +551,7 @@
                 android:layout_width="@dimen/rg_icon"
                 android:layout_height="@dimen/rg_icon"
                 android:layout_alignParentEnd="true"
-                android:src="@mipmap/ic_launcher"
+                android:src="@mipmap/bt_green_normal"
                 android:layout_marginRight="@dimen/activity_vertical_margin"
                 />
         </RelativeLayout>
@@ -546,12 +565,16 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/camera_setting_sub_item_margin"
+            android:layout_marginTop="@dimen/camera_setting_sub_item_margin"
+            >
             <TextView
                 android:layout_centerVertical="true"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Daylight"
+                android:layout_marginLeft="@dimen/camera_setting_second_level_words_margin_left"
                 />
             <ImageView
                 android:layout_centerVertical="true"
@@ -559,7 +582,7 @@
                 android:layout_width="@dimen/rg_icon"
                 android:layout_height="@dimen/rg_icon"
                 android:layout_alignParentEnd="true"
-                android:src="@mipmap/ic_launcher"
+                android:src="@mipmap/bt_green_normal"
                 android:layout_marginRight="@dimen/activity_vertical_margin"
                 />
         </RelativeLayout>
@@ -572,12 +595,16 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/camera_setting_sub_item_margin"
+            android:layout_marginTop="@dimen/camera_setting_sub_item_margin"
+            >
             <TextView
                 android:layout_centerVertical="true"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Cloudy"
+                android:layout_marginLeft="@dimen/camera_setting_second_level_words_margin_left"
                 />
             <ImageView
                 android:layout_centerVertical="true"
@@ -585,12 +612,35 @@
                 android:layout_width="@dimen/rg_icon"
                 android:layout_height="@dimen/rg_icon"
                 android:layout_alignParentEnd="true"
-                android:src="@mipmap/ic_launcher"
+                android:src="@mipmap/bt_green_normal"
                 android:layout_marginRight="@dimen/activity_vertical_margin"
                 />
         </RelativeLayout>
 
 
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:padding="8dp"
+            >
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Restore Defaults"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="@dimen/camera_setting_words_margin_left"
+                android:textSize="@dimen/camera_setting_item_text_size"
+                android:textColor="@android:color/holo_green_dark"
+                />
+
+
+        </RelativeLayout>
+
     </LinearLayout>
 
-</LinearLayout>
+</ScrollView>

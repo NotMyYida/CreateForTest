@@ -113,7 +113,7 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
         switch (position){
             case 0:
                 intent = new Intent(this, VerifyLayoutActivity.class);
-                intent.putExtra(Config.VERIFY_TYPE_XML,R.layout.layout_nagative_margin);
+                intent.putExtra(Config.VERIFY_TYPE_XML,R.layout.activity_scroller_layout);
                 startActivity(intent);
                 break;
             case 1:
