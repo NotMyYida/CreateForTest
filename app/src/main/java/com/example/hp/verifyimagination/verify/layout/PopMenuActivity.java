@@ -11,7 +11,10 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.view.View;
+import android.widget.Button;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -34,6 +37,7 @@ public class PopMenuActivity extends BaseActivity implements View.OnClickListene
 
     private PopMenuMore popMenuMore;
     private ImageView ivBitmap;
+    private View viewTestLayoutParameter;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -51,6 +55,11 @@ public class PopMenuActivity extends BaseActivity implements View.OnClickListene
         }else{
             ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},0);
         }
+
+        Button btnSetLayoutParameter = findViewById(R.id.btn_set_layout_parameter);
+        btnSetLayoutParameter.setOnClickListener(this);
+
+        viewTestLayoutParameter = findViewById(R.id.view_test_layoutParameter);
 
     }
 
@@ -121,6 +130,19 @@ public class PopMenuActivity extends BaseActivity implements View.OnClickListene
 
     @Override
     public void onClick(View v) {
-        popMenuMore.showAsDropDown(v);
+        int id = v.getId();
+        switch( id ){
+            case R.id.tv_pop:
+                popMenuMore.showAsDropDown(v);
+                break;
+
+            case R.id.btn_set_layout_parameter:
+                LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, 80);
+                layoutParams.setMargins(0,100,0,100);
+                viewTestLayoutParameter.setLayoutParams(layoutParams);
+                viewTestLayoutParameter.requestLayout();
+                break;
+        }
+
     }
 }

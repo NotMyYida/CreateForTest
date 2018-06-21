@@ -1,6 +1,8 @@
 package com.example.hp.verifyimagination.verify.layout.funtion;
 
+import android.content.Intent;
 import android.content.res.Configuration;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.View;
@@ -34,7 +36,7 @@ public class ImageRotationActivity extends BaseActivity {
                 imgIcon.setOrientation(rotateDegree, true );
             }
         });
-
+        Intent.ACTION_ATTACH_DATA;
     }
 
     @Override

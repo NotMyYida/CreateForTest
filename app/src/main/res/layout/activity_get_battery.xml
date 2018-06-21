@@ -20,7 +20,7 @@
 
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="300dp">
         <TextView
             android:layout_gravity="center_horizontal|bottom"
             android:layout_width="wrap_content"
@@ -45,17 +45,22 @@
             android:id="@+id/btn_show_low_battery"
             android:layout_gravity="bottom|end"
             />
-        <com.example.hp.verifyimagination.view.GestureViewGroup
-            android:layout_width="match_parent"
-            android:layout_height="300dp">
+        <!--<com.example.hp.verifyimagination.view.GestureViewGroup-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="300dp">-->
 
-            <com.example.hp.verifyimagination.view.JustTouchScroll
-                android:layout_width="match_parent"
-                android:layout_height="300dp" />
+            <!--&lt;!&ndash;<com.example.hp.verifyimagination.view.JustTouchScroll&ndash;&gt;-->
+                <!--&lt;!&ndash;android:layout_width="match_parent"&ndash;&gt;-->
+                <!--&lt;!&ndash;android:layout_height="300dp" />&ndash;&gt;-->
 
-        </com.example.hp.verifyimagination.view.GestureViewGroup>
+        <!--</com.example.hp.verifyimagination.view.GestureViewGroup>-->
 
     </FrameLayout>
 
+    <com.example.hp.verifyimagination.view.JustTouchScroll
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:background="@color/colorPrimary"
+        />
     
 </LinearLayout>

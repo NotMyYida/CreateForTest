@@ -10,6 +10,7 @@ import android.graphics.Rect;
 import android.graphics.RectF;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
@@ -125,7 +126,7 @@ public class VerifyMatrixView extends View {
      * @param px
      * @param py
      */
-    public void steSkew(float kx, float ky, float px, float py){
+    public void setSkew(float kx, float ky, float px, float py){
         matrix.setSkew(kx,ky,px,py);
         invalidate();
     }
@@ -148,6 +149,8 @@ public class VerifyMatrixView extends View {
         matrix.mapRect(rect);
         Toast.makeText(getContext(),"left : "+rect.left+" top : "+rect.top+
                 " right : "+rect.right+" bottom : "+rect.bottom,Toast.LENGTH_SHORT).show();
+        Log.e("matrix","mapRect : "+"left : "+rect.left+" top : "+rect.top+
+                " right : "+rect.right+" bottom : "+rect.bottom);
     }
 
 

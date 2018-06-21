@@ -5,21 +5,80 @@
     <include layout="@layout/toolbar_include"/>
     <com.example.hp.verifyimagination.view.ScrollerLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="60dp">
         <Button
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:text="This is first child view"/>
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SLOW MOTION"/>
 
         <Button
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:text="This is second child view"/>
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="VIDEO"/>
 
         <Button
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:text="This is third child view"/>
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="PHOTO"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="PORTRAIT"
+            />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="PANORAMA"
+            />
+
     </com.example.hp.verifyimagination.view.ScrollerLayout>
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Slow Motion"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Video"
+                android:layout_marginLeft="12dp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="PHOTO"
+                android:layout_marginLeft="12dp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="PORTRAIT"
+                android:layout_marginLeft="12dp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="PANORAMA"
+                android:layout_marginLeft="12dp"
+                />
+        </LinearLayout>
+
+    </HorizontalScrollView>
+
 
 </LinearLayout>

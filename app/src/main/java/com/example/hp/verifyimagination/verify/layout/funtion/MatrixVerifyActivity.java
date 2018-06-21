@@ -1,5 +1,7 @@
 package com.example.hp.verifyimagination.verify.layout.funtion;
 
+import android.graphics.Rect;
+import android.graphics.RectF;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
@@ -37,6 +39,11 @@ public class MatrixVerifyActivity extends BaseActivity implements View.OnClickLi
     private EditText etSkewY;
     private EditText etSkewPx;
     private EditText etSkewPy;
+    private Button btnMapRect;
+    private EditText etRectBottom;
+    private EditText etRectRight;
+    private EditText etRectTop;
+    private EditText etRectLeft;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -53,12 +60,14 @@ public class MatrixVerifyActivity extends BaseActivity implements View.OnClickLi
         btnRotate = findViewById(R.id.btn_rotate);
         btnScale = findViewById(R.id.btn_scale);
         btnSkew = findViewById(R.id.btn_skew);
+        btnMapRect = findViewById(R.id.btn_map_rect);
 
         btnReset.setOnClickListener(this);
         btnTranslate.setOnClickListener(this);
         btnRotate.setOnClickListener(this);
         btnScale.setOnClickListener(this);
         btnSkew.setOnClickListener(this);
+        btnMapRect.setOnClickListener(this);
 
 
         etTranslateX = findViewById(R.id.et_translate_x);
@@ -77,6 +86,12 @@ public class MatrixVerifyActivity extends BaseActivity implements View.OnClickLi
         etSkewY = findViewById(R.id.et_skew_y);
         etSkewPx = findViewById(R.id.et_skew_px);
         etSkewPy = findViewById(R.id.et_skew_py);
+
+        etRectLeft = findViewById(R.id.et_rect_left);
+        etRectTop = findViewById(R.id.et_rect_top);
+        etRectRight = findViewById(R.id.et_rect_right);
+        etRectBottom = findViewById(R.id.et_rect_bottom);
+
 
     }
 
@@ -124,10 +139,43 @@ public class MatrixVerifyActivity extends BaseActivity implements View.OnClickLi
                 break;
 
             case R.id.btn_scale :
-
+                int scaleX = CommonUtil.parseStringToInteger(etScaleX.getText().toString());
+                int scaleY = CommonUtil.parseStringToInteger(etScaleY.getText().toString());
+                if( isEmptyString(etScalePx.getText().toString()) || isEmptyString(etScalePy.getText().toString())){
+                    verifyMatrixView.setScale(scaleX,scaleY);
+                }else{
+                    int scalePx = CommonUtil.parseStringToInteger(etScalePx.getText().toString());
+                    int scalePy = CommonUtil.parseStringToInteger(etScalePy.getText().toString());
+                    verifyMatrixView.setScale(scaleX,scaleY,scalePx,scalePy);
+                }
                 break;
 
             case R.id.btn_skew :
+                int skewX = CommonUtil.parseStringToInteger(etSkewX.getText().toString());
+                int skewY = CommonUtil.parseStringToInteger(etSkewY.getText().toString());
+                if( isEmptyString(etSkewPx.getText().toString()) || isEmptyString(etSkewPy.getText().toString())){
+                    verifyMatrixView.setSkew(skewX,skewY);
+                }else{
+                    int skewPx = CommonUtil.parseStringToInteger(etSkewPx.getText().toString());
+                    int skewPy = CommonUtil.parseStringToInteger(etSkewPy.getText().toString());
+                    verifyMatrixView.setSkew(skewX,skewY,skewPx,skewPy);
+                }
+                break;
+
+            case R.id.btn_map_rect:
+                boolean runMapRect = true;
+                if( isEmptyString(etRectLeft.getText().toString()) || isEmptyString(etRectTop.getText().toString())
+                        || isEmptyString(etRectRight.getText().toString()) || isEmptyString(etRectBottom.getText().toString())){
+                    runMapRect = false;
+                }
+                if( runMapRect ){
+                    int rectLeft = CommonUtil.parseStringToInteger(etRectLeft.getText().toString());
+                    int rectTop = CommonUtil.parseStringToInteger(etRectTop.getText().toString());
+                    int rectRight = CommonUtil.parseStringToInteger(etRectRight.getText().toString());
+                    int rectBottom = CommonUtil.parseStringToInteger(etRectBottom.getText().toString());
+                    RectF rectf = new RectF(rectLeft,rectTop,rectRight,rectBottom);
+                    verifyMatrixView.mapRect(rectf);
+                }
 
                 break;
 

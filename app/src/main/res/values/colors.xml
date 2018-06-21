@@ -5,4 +5,10 @@
     <color name="colorAccent">#55FF00FF</color>
 
     <color name="colorTextAssistant">#88888888</color>
+
+    <color name="camera_control_bg_opaque">#ff191919</color>
+    <color name="camera_control_bg_transparent">#4d191919</color>
+
+    <color name="color_1">#33b5e5</color><!-- mSelectedPaint -->
+    <color name="color_2">#fae680</color><!-- mSubPaint -->
 </resources>

@@ -3,6 +3,7 @@ package com.example.hp.verifyimagination.verify.layout;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
+import android.util.Log;
 import android.view.DragEvent;
 import android.view.Gravity;
 import android.view.View;
@@ -56,7 +57,8 @@ public class VerifyTabLayoutActivity extends BaseActivity {
         verticalSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                Toast.makeText(VerifyTabLayoutActivity.this,"progress : "+progress,Toast.LENGTH_SHORT).show();
+//                Toast.makeText(VerifyTabLayoutActivity.this,"progress : "+progress,Toast.LENGTH_SHORT).show();
+                Log.e("VerifyTab","Progress : "+progress);
             }
 
             @Override
@@ -73,11 +75,11 @@ public class VerifyTabLayoutActivity extends BaseActivity {
 
         HorizontalSelectedView horizontalselectedView = findViewById(R.id.horizontalSelectedView);
         ArrayList<String> strings = new ArrayList<String>();
-        strings.add("慢动作");
-        strings.add("视频");
-        strings.add("照片");
-        strings.add("人像");
-        strings.add("全景");
+        strings.add("SLOW MOTION"); //SLOW MOTION  慢动作
+        strings.add("VIDEO");       //VIDEO            视频
+        strings.add("PHOTO");       //PHOTO            拍照
+        strings.add("PORTRAIT");    //PORTRAIT                人像
+        strings.add("PANORAMA");    //PANORAMA            全景
         horizontalselectedView.setData(strings);
     }
 

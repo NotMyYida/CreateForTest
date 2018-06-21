@@ -20,6 +20,23 @@
         android:layout_height="200dp"
         android:layout_marginLeft="16dp"
         android:scaleType="fitCenter"
+        android:background="@color/camera_control_bg_opaque"
         />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="@android:color/background_dark"
+        android:id="@+id/view_test_layoutParameter"
+        />
+
+    <Button
+        android:text="set Layout Parameter"
+        android:textAllCaps="false"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_set_layout_parameter"
+        />
+
 
 </LinearLayout>

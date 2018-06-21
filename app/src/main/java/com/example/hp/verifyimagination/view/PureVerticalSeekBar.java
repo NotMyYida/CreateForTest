@@ -33,7 +33,7 @@ public class PureVerticalSeekBar extends View {
     private int thumbColor = Color.BLACK;
     private int thumbBorderColor = Color.TRANSPARENT;
     private int colorArray[] = {startColor, middleColor, endColor};
-    private int colorArray2[] = {Color.GRAY, Color.GRAY, Color.GRAY};
+    private int colorArray2[] = {Color.WHITE, Color.WHITE, Color.WHITE};
     private float x, y;
     private float mRadius;
     private float progress;
@@ -220,8 +220,8 @@ public class PureVerticalSeekBar extends View {
             y = (float) (1 - 0.01 * progress) * sHeight;
         }
 
-//        drawBackground(canvas);
-        drawDashLineBackground(canvas);
+        drawBackground(canvas);
+//        drawDashLineBackground(canvas);
         drawCircle(canvas);
         paint.reset();
     }

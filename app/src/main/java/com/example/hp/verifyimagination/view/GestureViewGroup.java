@@ -47,7 +47,7 @@ public class GestureViewGroup extends ViewGroup {
         @Override
         public boolean onSingleTapUp(MotionEvent e) {
             Log.e("P:onSingleTapUp","e1 : "+e.getX()+","+e.getY());
-            return false;
+            return true;
         }
 
         @Override
@@ -77,7 +77,7 @@ public class GestureViewGroup extends ViewGroup {
         @Override
         public boolean onScroll(MotionEvent e1, MotionEvent e2, float distanceX, float distanceY) {
             Log.e("P:onScroll","e1 : "+e1.getX()+","+e1.getY()+"  e2 : "+e2.getX()+","+e2.getY()+"  distanceX : "+distanceX+" distanceY : "+distanceY);
-            return true;
+            return false;
         }
 
         @Override

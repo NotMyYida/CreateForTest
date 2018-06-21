@@ -159,7 +159,7 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
                 startActivity(intent);
                 break;
         }
-        mRefreshLayout.autoRefresh();
+//        mRefreshLayout.autoRefresh();
     }
 
     @Override

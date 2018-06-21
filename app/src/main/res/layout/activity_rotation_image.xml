@@ -24,4 +24,11 @@
         android:background="@drawable/circle"
         />
 
+
+    <com.example.hp.verifyimagination.view.PathArcToView
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_width="200dp"
+        android:layout_height="200dp" />
+
 </RelativeLayout>

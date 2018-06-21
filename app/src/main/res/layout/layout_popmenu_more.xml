@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
@@ -23,4 +24,15 @@
         android:divider="#FFFFFF"
         android:dividerHeight="1px"
         android:focusable="true" />
+    
+    <com.example.hp.verifyimagination.view.PureVerticalSeekBar
+        android:layout_width="30dp"
+        android:layout_height="300dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="60dp"
+        android:background="@color/color_1"
+        app:dragable="true"
+        app:image_background="@mipmap/ic_focusing_sun"
+        />
+    
 </LinearLayout>
