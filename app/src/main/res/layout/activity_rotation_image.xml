@@ -6,6 +6,33 @@
 
     <include layout="@layout/toolbar_include"/>
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="choose"
+        android:id="@+id/btn_choose"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="bindService"
+        android:layout_toRightOf="@id/btn_choose"
+        android:id="@+id/btn_bindService"
+        />
+
+
+    <Spinner
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/spinner"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="5dp"
+        android:layout_marginEnd="5dp"
+        android:textColor="@android:color/white"
+        />
+
     <com.example.hp.verifyimagination.view.RotateImageView
         android:id="@+id/img_icon"
         android:layout_width="wrap_content"

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="60dp"
+                android:background="#CCCCCC"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_fx"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:gravity="center"
+                    android:text="热读榜"
+                    android:textColor="#969696"
+                    android:textSize="25sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical">
+
+                <Spinner
+                    android:id="@+id/sp_chose"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:dropDownWidth="wrap_content"
+                    android:popupBackground="#BFEFFF"
+                    android:spinnerMode="dropdown" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="300dp"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_zong"
+                android:layout_width="fill_parent"
+                android:layout_height="30dp"
+                android:layout_marginBottom="50dp"
+                android:gravity="center"
+                android:text="读书是造就灵魂的工具"
+                android:textColor="#969696"
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/tv_yong"
+                android:layout_width="fill_parent"
+                android:layout_height="30dp"
+                android:layout_marginBottom="30dp"
+                android:text="--雨果"
+                android:textColor="#969696"
+                android:textSize="25sp" />
+            </LinearLayout>
+        </ScrollView>
+</LinearLayout>

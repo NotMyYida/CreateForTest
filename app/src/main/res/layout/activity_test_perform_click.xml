@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/toolbar_include"/>
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/swipe_refresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <Button
+            android:id="@+id/btn_show_toast"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="Show Toast"
+            android:textAllCaps="false"
+            />
+
+        <Button
+            android:id="@+id/btn_test_perform_click"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Perform Click"
+            android:textAllCaps="false"
+            />
+    </android.support.v4.widget.SwipeRefreshLayout>
+
+
+</LinearLayout>

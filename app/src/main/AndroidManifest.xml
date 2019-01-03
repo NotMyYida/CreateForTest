@@ -6,6 +6,7 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
 
+
     <application
         android:name=".base.VerifyImaginationApp"
         android:allowBackup="true"
@@ -14,7 +15,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden|locale|layoutDirection"
+            android:screenOrientation="portrait"
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -40,6 +44,21 @@
             />
         <activity android:name=".verify.layout.funtion.ScrollerActivity"/>
 
+        <activity android:name=".verify.layout.funtion.TestPerformClickActivity"/>
+
+        <activity android:name=".verify.layout.funtion.WhiteActivity"
+            />
+        <activity android:name=".verify.layout.funtion.OrientationActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            />
+
+        <activity android:name=".verify.layout.funtion.TestCameraActivity"
+            android:theme="@style/Theme.Camera"
+            android:configChanges="orientation|screenSize|keyboardHidden|locale|layoutDirection"
+            android:screenOrientation="portrait"
+            />
+
+        <service android:name=".service.DestoryService"/>
     </application>
 
 </manifest>

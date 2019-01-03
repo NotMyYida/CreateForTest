@@ -18,6 +18,11 @@
         android:summary="Pick a tone,any tone"
         />
 
+
+        <SwitchPreference
+            android:key="switch"
+            android:title="Switch"
+            />
     </PreferenceCategory>
 
 </PreferenceScreen>

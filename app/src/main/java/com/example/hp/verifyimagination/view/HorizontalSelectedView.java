@@ -1,5 +1,8 @@
 package com.example.hp.verifyimagination.view;
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.animation.ValueAnimator;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
@@ -12,6 +15,8 @@ import android.util.Log;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.animation.DecelerateInterpolator;
+import android.view.animation.LinearInterpolator;
 
 
 import com.example.hp.verifyimagination.R;
@@ -53,7 +58,9 @@ public class HorizontalSelectedView extends View {
     private Handler mHandler = new Handler(){};
     int margin = 40 ;           // margin between two string
 
-//    private ValueAnimator valueAnimator;
+    private ValueAnimator valueAnimator;
+    private int lastN;                  // last selected INDEX
+
 //    private VelocityTracker velocityTracker = VelocityTracker.obtain();
     private GestureDetector mGestureDetector;
     private int centerTextWidth;
@@ -85,13 +92,15 @@ public class HorizontalSelectedView extends View {
         selectedPaint = new TextPaint(Paint.ANTI_ALIAS_FLAG);
         selectedPaint.setColor(selectedColor);
         selectedPaint.setTextSize(selectedTextSize);
-//        valueAnimator = new ValueAnimator();
+        valueAnimator = new ValueAnimator();
     }
 
 
     public interface ModuleChangeListener{
         void onModuleChange(int moduleIndex);
     }
+
+
 
     public void setOnModuleChangeListener(ModuleChangeListener moduleChangeListener){
         this.moduleChangeListener = moduleChangeListener ;
@@ -124,16 +133,24 @@ public class HorizontalSelectedView extends View {
         public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
             if( velocityX > 200 ) {         // swipe to right
                 if (n >= 1 && n <= strings.size() -1 ) {        // n-1 >= 0 && n-1 < strings.size() -1
+
+                    int choosedIndex = n - 1;
+                    anOffset = getPositionByIndex(choosedIndex) - getWidth()/2 + stringWidthList.get(choosedIndex)/2;
                     n = n - 1;
-                    invalidate();
+                    setModuleIndex(n);
+
                     if( moduleChangeListener != null )
                         moduleChangeListener.onModuleChange(n); // module has been changed
                     delayToLoadModule(300);
                 }
             }else if( velocityX < -200 ){   // swipe to left
                 if ( n >= 0 && n <= strings.size() - 2) {   // n+1 >= 0 && n+1 < strings.size() -1
+
+                    int choosedIndex = n + 1;
+                    anOffset = getPositionByIndex(choosedIndex) - getWidth()/2 + stringWidthList.get(choosedIndex)/2;
                     n = n + 1;
-                    invalidate();
+                    setModuleIndex(n);
+
                     if( moduleChangeListener != null )
                         moduleChangeListener.onModuleChange(n); // module has been changed
                     delayToLoadModule(300);
@@ -147,10 +164,17 @@ public class HorizontalSelectedView extends View {
             float x = e.getX();
             // the distance between touch point and middle vertical line, divide 4/5 length of anInt ,could get offset of n
             int offset = calculateIndexN(x);
+            if( offset == 0 ){
+                return false;
+            }
 //            int offset = (int) ((x - width / 2) / (anInt*4/5));
             if (n + offset >= 0 && n + offset <= strings.size() - 1) {
+
+                int choosedIndex = n + offset;
+                anOffset = getPositionByIndex(choosedIndex) - getWidth()/2 + stringWidthList.get(choosedIndex)/2;
                 n = n + offset;
-                invalidate();
+                setModuleIndex(n);
+
                 if( moduleChangeListener != null )
                     moduleChangeListener.onModuleChange(n); // module has changed
                 delayToLoadModule(300);
@@ -231,31 +255,29 @@ public class HorizontalSelectedView extends View {
         },ms);
     }
 
-//    private void animateToCenter() {
-//
-//        if (valueAnimator == null || valueAnimator.isRunning()) {
-//            return;
-//        }
-//        valueAnimator = ValueAnimator.ofInt((int)anOffset,0).setDuration(600);
-//        valueAnimator.setInterpolator(new LinearInterpolator());
-//        valueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-//            @Override
-//            public void onAnimationUpdate(ValueAnimator animation) {
-//                anOffset = (int) animation.getAnimatedValue();
-//                Log.e("offset","value " + anOffset);
-//                invalidate();
-//            }
-//
-//        });
-//        valueAnimator.addListener(new AnimatorListenerAdapter() {
-//            @Override
-//            public void onAnimationEnd(Animator animation) {
-//
-//            }
-//        });
-//
-//        valueAnimator.start();
-//    }
+    private void animateToCenter() {
+
+        if (valueAnimator == null || valueAnimator.isRunning()) {
+            return;
+        }
+        valueAnimator = ValueAnimator.ofInt(0,(int)anOffset).setDuration(200);
+        valueAnimator.setInterpolator(new DecelerateInterpolator());
+        valueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            @Override
+            public void onAnimationUpdate(ValueAnimator animation) {
+                anOffset = (int) animation.getAnimatedValue();
+                invalidate();
+            }
+
+        });
+        valueAnimator.addListener(new AnimatorListenerAdapter() {
+            @Override
+            public void onAnimationEnd(Animator animation) {
+            }
+        });
+
+        valueAnimator.start();
+    }
 
 //    public void adapterSeeSize(){
 //        int stringsTotalLength = 0;
@@ -283,47 +305,59 @@ public class HorizontalSelectedView extends View {
                 stringWidthList.add(rect.width());
             }
 
-            for ( int i = 0 ; i < stringWidthList.size(); i++ ){
-                Log.e("stringWidthList","width["+i+"] -- > "+stringWidthList.get(i));
-            }
+
 
             anInt = width / seeSize;
+            lastN = n;
+        }
+        if( firstVisible || lastN == n ) {
+            if (n >= 0 && n <= strings.size() - 1) {// prevent out of index bound.
+
+                String s = strings.get(n); // get the selected words.
+                /**
+                 * get the width and height of selected words
+                 */
+                selectedPaint.getTextBounds(s, 0, s.length(), rect);
+                centerTextWidth = rect.width();
+                centerTextHeight = rect.height();
+                canvas.drawText(strings.get(n), getWidth() / 2 - centerTextWidth / 2 , getHeight() / 2 + centerTextHeight / 2, selectedPaint);//绘制被选中文字，注意点是y坐标
+
+                for (int i = 0; i < strings.size(); i++) { //traversal strings，draw every words
+
+                    if (i == 0) {
+                        textPaint.getTextBounds(strings.get(0), 0, strings.get(0).length(), rect);
+                        textHeight = rect.height();
+                    }
+
+                    if (i != n) {
+                        canvas.drawText(strings.get(i), getPositionByIndex(i), getHeight() / 2 + textHeight / 2, textPaint);//画出每组文字
+                    }
+                }
+
+            }
             firstVisible = false;
         }
-        if (n >= 0 && n <= strings.size() - 1) {// prevent out of index bound.
+        else{
 
-            String s = strings.get(n); // get the selected words.
-            /**
-             * get the width and height of selected words
-             */
-            selectedPaint.getTextBounds(s, 0, s.length(), rect);
-            centerTextWidth = rect.width();
-            centerTextHeight = rect.height();
-            canvas.drawText(strings.get(n), getWidth() / 2 - centerTextWidth / 2 + anOffset , getHeight() / 2 + centerTextHeight / 2, selectedPaint);//绘制被选中文字，注意点是y坐标
-
+            int xPosition = getPositionByIndexAtLastTime(n);
+            canvas.drawText(strings.get(n),xPosition - anOffset,getHeight()/2 + textHeight/2,selectedPaint);
             for (int i = 0; i < strings.size(); i++) { //traversal strings，draw every words
-//                if (n > 0 && n < strings.size() - 1) { //the length of every words in strings maybe different,
-//                                                       //in order for the selected text to be the same as the center width, we get the average value of the two words length.
-//                    textPaint.getTextBounds(strings.get(n - 1), 0, strings.get(n - 1).length(), rect);
-//                    int width1 = rect.width();
-//                    textPaint.getTextBounds(strings.get(n + 1), 0, strings.get(n + 1).length(), rect);
-//                    int width2 = rect.width();
-//                    textWidth = (width1 + width2) / 2;
-//                }
+
                 if (i == 0) {
                     textPaint.getTextBounds(strings.get(0), 0, strings.get(0).length(), rect);
                     textHeight = rect.height();
                 }
 
                 if (i != n) {
-//                    canvas.drawText(strings.get(i), (i - n) * anInt + getWidth() / 2 - textWidth / 2, getHeight() / 2 + textHeight / 2, textPaint);//画出每组文字
-                    canvas.drawText(strings.get(i), getPositionByIndex(i), getHeight() / 2 + textHeight / 2, textPaint);//画出每组文字
+                    if( i == lastN ){
+                        canvas.drawText(strings.get(i),getWidth() / 2 - stringWidthList.get(lastN) / 2 - anOffset, getHeight() / 2 + centerTextHeight / 2, textPaint);
+                    }else {
+                        canvas.drawText(strings.get(i), getPositionByIndexAtLastTime(i) - anOffset, getHeight() / 2 + textHeight / 2, textPaint);//画出每组文字
+                    }
 
                 }
             }
-
         }
-
     }
 
     // according to index ,calculate the distance
@@ -344,6 +378,28 @@ public class HorizontalSelectedView extends View {
 
        return positionDistanceToMid;
     }
+
+
+
+    // according to index ,calculate the distance
+    public synchronized int getPositionByIndexAtLastTime(int index){
+        int offset = lastN - index;
+        int positionDistanceToMid = 0;
+        if( offset > 0 ){
+            for (int i = 1; i <= offset ; i++ ){
+                positionDistanceToMid += stringWidthList.get(lastN-i);
+            }
+            positionDistanceToMid = getWidth()/2 - positionDistanceToMid - offset*margin - stringWidthList.get(lastN)/2;
+        }else{
+            for (int i = 1 ; i < -offset ; i++ ){
+                positionDistanceToMid += stringWidthList.get(lastN+i);
+            }
+            positionDistanceToMid = getWidth()/2 + positionDistanceToMid - offset*margin + stringWidthList.get(lastN)/2;
+        }
+
+        return positionDistanceToMid;
+    }
+
 
     /**
      * change the visible num counts
@@ -410,9 +466,19 @@ public class HorizontalSelectedView extends View {
      */
     public void setModuleIndex(int moduleIndex){
         this.n = moduleIndex ;
-        invalidate();
-        moduleChangeListener.onModuleChange(n); // 模式发生改变
-        delayToLoadModule(300);
+        if( n != lastN ) {
+//            invalidate();
+            animateToCenter();
+//            moduleChangeListener.onModuleChange(n); // 模式发生改变
+//            delayToLoadModule(300);
+        }
+        // save the selected INDEX, add a delay time to prevent some error
+        mHandler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                lastN = n;
+            }
+        },300);
     }
 
     /**

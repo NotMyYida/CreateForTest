@@ -22,7 +22,7 @@ public class ExposureSeekBarRenderer {
     private final int thumbHeight;
     private final int thumbWidth;
     private float mProgress = 0;
-    public float coefficient = 0.2f;    // friction coefficient
+    public float coefficient = 0.5f;    // friction coefficient
     private float widthOffset = 60;    // width offset
 
     private OnExposureSeekBarChangeListener mOnExposureSeekBarChangeListener;

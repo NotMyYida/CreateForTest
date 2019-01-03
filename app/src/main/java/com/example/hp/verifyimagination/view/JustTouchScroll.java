@@ -132,7 +132,7 @@ public class JustTouchScroll extends View implements ExposureSeekBarRenderer.OnE
                 }else if( progress <= -0.5f){
                     progress = -0.5f;
                 }
-                exposureSeekBarRenderer.setProgress(progress);
+//                exposureSeekBarRenderer.setProgress(progress);
                 invalidate();
                 Log.e("ACTION_MOVE","moveX : "+moveX+"  moveY : "+moveY);
                 break;
@@ -149,7 +149,7 @@ public class JustTouchScroll extends View implements ExposureSeekBarRenderer.OnE
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         canvas.drawColor(Color.BLUE);
-        exposureSeekBarRenderer.draw(canvas,downX,downY);
+        exposureSeekBarRenderer.draw(canvas,downX,downY,dy);
     }
 
     @Override

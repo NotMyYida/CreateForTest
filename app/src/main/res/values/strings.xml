@@ -12,4 +12,6 @@
     <string name="test_rotation">测试Ｒｏｔａｔｉｏｎ</string>
 
     <string name="test_toast">测试Toast</string>
+    <string name="test_perform_click">TestPerformClick</string>
+    <string name="test_white">TestWhite</string>
 </resources>

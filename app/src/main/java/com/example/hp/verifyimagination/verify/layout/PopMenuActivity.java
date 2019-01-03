@@ -47,6 +47,12 @@ public class PopMenuActivity extends BaseActivity implements View.OnClickListene
         TextView tvPop = findViewById(R.id.tv_pop);
         initPopMenu();
         tvPop.setOnClickListener(this);
+//        tvPop.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Toast.makeText(PopMenuActivity.this,"Toast Menu",Toast.LENGTH_SHORT).show();
+//            }
+//        });
 
         ivBitmap = findViewById(R.id.iv_bitmap);
         int permission = ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE);

@@ -1,1 +1,2 @@
-include ':app'
+include ':app', ':myapplication', ':blurringview2'
+project(':blurringview2').projectDir = new File('blurringview')
